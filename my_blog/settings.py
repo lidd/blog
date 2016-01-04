@@ -65,6 +65,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'blog.views.global_setting'
             ],
         },
     },
@@ -116,6 +117,10 @@ USE_L10N = True
 
 USE_TZ = True
 
+#base information
+SITE_NAME ='LIDD'
+GITHUB = ''
+EMAIL =''
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
