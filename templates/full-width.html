@@ -1,26 +1,8 @@
 <!DOCTYPE html>
-{% load staticfiles %}
 <html>
-<head>
-    <title>Black &amp; White</title>
 
-    <!-- meta -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- css -->
-    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css'%}">
-    <link rel="stylesheet" href="{% static 'css/ionicons.min.css'%}">
-    <link rel="stylesheet" href="{% static 'css/pace.css' %}">
-    <link rel="stylesheet" href="{% static 'css/custom.css'%}">
-
-    <!-- js -->
-    <script src="{% static 'js/jquery-2.1.3.min.js'%}"></script>
-    <script src="{% static 'js/bootstrap.min.js'%}"></script>
-    <script src="{% static 'js/pace.min.js'%}"></script>
-    <script src="{% static 'js/modernizr.custom.js' %}"></script>
-</head>
-
+{% extends "base.html" %}
+{% block content %}
 	<body>
 		<div class="container">	
 			<header id="site-header">
@@ -160,31 +142,6 @@
 				</div>
 			</div>
 		</div>
-		<footer id="site-footer">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-12">
-						<p class="copyright">&copy; 2014 ThemeWagon.com</p>
-					</div>
-				</div>
-			</div>
-		</footer>
-
-		<!-- Mobile Menu -->
-		<div class="overlay overlay-hugeinc">
-			<button type="button" class="overlay-close"><span class="ion-ios-close-empty"></span></button>
-			<nav>
-				<ul>
-					<li><a href="index.html">Home</a></li>
-					<li><a href="full-width.html">Blog</a></li>
-					<li><a href="about.html">About</a></li>
-					<li><a href="contact.html">Contact</a></li>
-				</ul>
-			</nav>
-		</div>
-
-        <script src="{% static 'js/script.js'%}"></script>
-
-
 	</body>
+{%endblock%}
 </html>
