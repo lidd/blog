@@ -14,6 +14,8 @@ def global_setting(request):
 def index(request):
     return render(request, 'index.html', locals())
 
+def blog(request):
+    return render(request,'full-width.html',locals())
 
 def about(request):
     return render(request, 'about.html', locals())

@@ -22,10 +22,10 @@
 
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav navbar-right">
-                            <li class="cl-effect-11"><a href="index" data-hover="Home">Home</a></li>
-                            <li class="cl-effect-11"><a href="full-width" data-hover="Blog">Blog</a></li>
-                            <li class="cl-effect-11"><a href="about" data-hover="About">About</a></li>
-                            <li class="cl-effect-11"><a href="contact" data-hover="Contact">Contact</a></li>
+                            <li class="cl-effect-11"><a href="{% url 'index' %}" data-hover="Home">Home</a></li>
+                            <li class="cl-effect-11"><a href="{% url 'blog' %}" data-hover="Blog">Blog</a></li>
+                            <li class="cl-effect-11"><a href="{% url 'about' %}" data-hover="About">About</a></li>
+                            <li class="cl-effect-11"><a href="{% url 'contact' %}" data-hover="Contact">Contact</a></li>
                         </ul>
                     </div>
                     <!-- /.navbar-collapse -->
@@ -50,7 +50,7 @@
     <nav>
         <ul>
             <li><a href="{% url 'index' %}">Home</a></li>
-            <li><a href="{% url 'index' %}">Blog</a></li>
+            <li><a href="www.baidu.com">Blog</a></li>
             <li><a href="{% url 'about' %}">About</a></li>
             <li><a href="{% url 'contact' %}">Contact</a></li>
         </ul>

@@ -25,10 +25,11 @@
 {% block nav %}
     {% include "blog_nav.html" %}
 {% endblock %}
+
 {% block content %}
-
+    {% block side%}
+    {% endblock %}
 {% endblock %}
-
 {% block footer %}
     {% include "footer.html" %}
 {% endblock %}
