@@ -135,6 +135,8 @@ figure {
 .main-nav {
 	margin-top: 11px;
 	max-width: 95%;
+	background-color:transparent;
+	border:transparent;
 }
 
 .main-nav a {
@@ -170,7 +172,7 @@ figure {
  */
 
 .cl-effect-11 a {
-	padding: 10px 0;
+	padding: 10px;
 	color: #0972b4;
 	text-shadow: none;
 } 
@@ -749,6 +751,8 @@ figure {
 @media (max-width: 991px) {
 	.main-nav a {
 		margin-right: 20px;
+		background-color：transparent !important;
+	    border：transparent;
 	}
 
 	#header-search-box {
@@ -764,7 +768,8 @@ figure {
 	}
 
 	.main-nav {
-		margin-top: 2px;
+		background-color:transparent !important;
+	    border:transparent;
 	}
 
 	.btn-5 span {

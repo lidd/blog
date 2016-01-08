@@ -111,9 +111,8 @@ if ( typeof define === 'function' && define.amd ) {
 })( window );
 
 (function() {
-    var triggerBttn = document.getElementById( 'trigger-overlay' ),
         overlay = document.querySelector( 'div.overlay' ),
-        closeBttn = overlay.querySelector( 'button.overlay-close' );
+        closeBttn = document.querySelector( 'button.overlay-close' );
         transEndEventNames = {
             'WebkitTransition': 'webkitTransitionEnd',
             'MozTransition': 'transitionend',
@@ -146,7 +145,5 @@ if ( typeof define === 'function' && define.amd ) {
             classie.add( overlay, 'open' );
         }
     }
-
-    triggerBttn.addEventListener( 'click', toggleOverlay );
     closeBttn.addEventListener( 'click', toggleOverlay );
 })();

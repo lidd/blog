@@ -19,7 +19,6 @@
     <script src="{% static 'js/bootstrap.min.js'%}"></script>
     <script src="{% static 'js/pace.min.js'%}"></script>
     <script src="{% static 'js/modernizr.custom.js' %}"></script>
-    <script src="{% static 'js/script.js'%}"></script>
 </head>
 <body>
 {% static 'img/me.jpg' as avatar%}
@@ -34,5 +33,8 @@
 {% block footer %}
     {% include "footer.html" %}
 {% endblock %}
+{% block script%}
+    <script src="{% static 'js/script.js'%}"></script>
+{% endblock%}
 </body>
 </html>
