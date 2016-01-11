@@ -14,16 +14,20 @@ def global_setting(request):
 def index(request):
     return render(request, 'index.html', locals())
 
+
 def blog(request):
-    return render(request,'full-width.html',locals())
+    return render(request, 'full-width.html', locals())
+
 
 def about(request):
     return render(request, 'about.html', locals())
 
 
 def contact(request):
-    return render(request,'contact.html',locals())
+    return render(request, 'contact.html', locals())
 
 
 def single(request):
-    return render(request,'single.html',locals())
+    return render(request, 'single.html', locals())
+
+
