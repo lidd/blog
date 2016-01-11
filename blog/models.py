@@ -2,6 +2,8 @@ from django.db import models
 
 
 # Create your models here.
+from blog import admin
+
 
 class USER(models.Model):
     name = models.CharField(max_length=16)
@@ -25,3 +27,4 @@ class COMMENT(models.Model):
     article_id = models.ForeignKey(ARTICLE)
     reply_id = models.IntegerField
     del_flag = models.BooleanField
+
