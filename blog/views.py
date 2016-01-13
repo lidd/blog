@@ -1,9 +1,10 @@
 from django.shortcuts import render
+import logging
 # Create your views here.
 # global setting
 from my_blog import settings
 
-
+Logger = logging.getLogger('blog.views')
 def global_setting(request):
     return {
         'SITE_NAME': settings.SITE_NAME,

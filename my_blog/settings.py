@@ -27,7 +27,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
+#自定义用户model
+AUTH_USER_MODEL = 'blog.USER'
 # Application definition
 
 INSTALLED_APPS = [
@@ -57,7 +58,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            os.path.join(BASE_DIR,'templates'),
+            os.path.join(BASE_DIR, 'templates'),
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -80,14 +81,12 @@ WSGI_APPLICATION = 'my_blog.wsgi.application'
 
 DATABASES = {
     'default': {
-        # 'ENGINE': 'django.db.backends.mysql',
-        # 'NAME': 'blog',
-        # 'USER': 'lidd',
-        # 'PASSWORD':'147258',
-        # 'HOST': 'localhost',
-        # 'PORT': '3306',
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'blog',
+        'USER': 'root',
+        'PASSWORD': '147258',
+        'HOST': '',
+        'PORT': '',
     },
 }
 
@@ -110,7 +109,67 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
+# more details on how to customize your logging configuration.
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': True,
+    'formatters': {
+        'standard': {
+            'format': '%(levelname)s %(asctime)s %(message)s'
+        },
+    },
+    'filters': {
+    },
+    'handlers': {
+        'mail_admins': {
+            'level': 'ERROR',
+            'class': 'django.utils.log.AdminEmailHandler',
+            'formatter': 'standard',
+        },
+        'debug': {
+            'level': 'DEBUG',
+            'class': 'logging.handlers.RotatingFileHandler',
+            'filename': 'log/log.log',
+            'formatter': 'standard',
+        },
+        'info': {
+            'level': 'INFO',
+            'class': 'logging.handlers.RotatingFileHandler',
+            'filename': 'log/log.log',
+            'formatter': 'standard',
+        },
+        'error': {
+            'level': 'ERROR',
+            'class': 'logging.handlers.RotatingFileHandler',
+            'filename': 'log/log.log',
+            'formatter': 'standard',
+        },
+        'scripts': {
+            'level': 'DEBUG',
+            'class': 'logging.handlers.RotatingFileHandler',
+            'filename': 'log/script.log',
+            'formatter': 'standard',
+        },
+    },
+    'loggers': {
+        'django.request': {
+            'handlers': ['mail_admins'],
+            'level': 'ERROR',
+            'propagate': True,
+            'filename': 'log/script.log'
+        },
+        'scripts': {
+            'handlers': ['scripts'],
+            'level': 'INFO',
+            'propagate': False
+        },
+        'blog.views': {
+            'handlers': ['info', 'debug', 'error'],
+            'level': 'INFO',
+            'propagate': False
+        },
+    }
+}
 # Internationalization
 # https://docs.djangoproject.com/en/1.9/topics/i18n/
 
@@ -124,10 +183,10 @@ USE_L10N = True
 
 USE_TZ = True
 
-#base information
-SITE_NAME ='LIDD'
+# base information
+SITE_NAME = 'LIDD'
 GITHUB = ''
-EMAIL =''
+EMAIL = ''
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
@@ -135,5 +194,5 @@ EMAIL =''
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR,'static'),
+    os.path.join(BASE_DIR, 'static'),
 )
