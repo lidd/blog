@@ -2,6 +2,7 @@ from django.contrib.auth.models import AbstractUser
 from django.db import models
 from django.utils import timezone
 
+
 # Create your models here.
 
 # 采用继承方式扩展用户信息
@@ -15,8 +16,19 @@ class USER(AbstractUser):
         verbose_name = '用户'
         verbose_name_plural = verbose_name
 
-    def __unicode__(self):
-        return self.name
+    def __str__(self):
+        return self.username
+
+
+class CATEGORY(models.Model):
+    category_name = models.CharField(max_length=10, verbose_name='分类名')
+
+    class Meta:
+        verbose_name = '分类'
+        verbose_name_plural = verbose_name
+
+    def __str__(self):
+        return self.category_name
 
 
 class ARTICLE(models.Model):
@@ -27,12 +39,13 @@ class ARTICLE(models.Model):
     keyword = models.CharField(max_length=100, null=True, blank=True)
     update_time = models.DateTimeField(default=timezone.now())
     del_flag = models.BooleanField
+    category = models.ForeignKey(CATEGORY,default=1)
 
     class Meta:
         verbose_name = '文章'
         verbose_name_plural = verbose_name
 
-    def __unicode__(self):
+    def __str__(self):
         return self.title
 
 

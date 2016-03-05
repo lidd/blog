@@ -16,13 +16,18 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+
 from blog.views import *
+from blog.upload import image_upload
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', index, name='index'),
-    url(r'^blog/$',blog ,name='blog'),
+    url(r'^blog/$',blog,name='blog'),
     url(r'^about/$',about,name='about'),
     url(r'^contact/$',contact,name='contact'),
     url(r'^single/$',single,name='single'),
+    url(r'^uploads/(?P<path>.*)$',"django.views.static.serve",{"document_root":settings.MEDIA_ROOT}),
+    url(r'^upload/(?P<dir_name>[^/]+)$',image_upload,name='image_upload'),
+    url(r'^category/$',get_category,name='category')
 ]

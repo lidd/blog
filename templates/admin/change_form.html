@@ -1,0 +1,21 @@
+{% extends "admin/change_form.html" %}
+
+{% block admin_change_form_document_ready %}
+    {{ block.super }}
+    <script type="text/javascript">
+        $.ajaxSetup({headers: {"X-CSRFToken": '{{ csrf_token }}'}});
+        var editor = new Simditor({
+            textarea: $('#id_content'),
+            placeholder: '',
+            defaultImage: 'images/image.png',
+            upload : {
+                url : '{% url 'image_upload' 'image'%}', //文件上传的接口地址
+                params: null, //键值对,指定文件上传接口的额外参数,上传的时候随文件一起提交
+                fileKey: 'imgFile', //服务器端获取文件数据的参数名
+                connectionCount: 3,
+                leaveConfirm: 'uploading...'
+            }
+        });
+        $('.simditor').css({'margin-left':'170px','width':'60%'})
+    </script>
+{% endblock %}

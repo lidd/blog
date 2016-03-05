@@ -34,15 +34,11 @@
     <div class="widget widget-category">
         <h3 class="widget-title">Category</h3>
         <ul>
+            {% for category in category_list %}
             <li>
-                <a href="#">Web Design</a>
+                <a href="{% url 'category' %} {{ categroy.id }}">{{ category.category_name }}</a>
             </li>
-            <li>
-                <a href="#">Web Development</a>
-            </li>
-            <li>
-                <a href="#">SEO</a>
-            </li>
+            {% endfor %}
         </ul>
     </div>
 </aside>

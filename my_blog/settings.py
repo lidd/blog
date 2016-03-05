@@ -27,7 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-#自定义用户model
+# 自定义用户model
 AUTH_USER_MODEL = 'blog.USER'
 # Application definition
 
@@ -87,9 +87,15 @@ DATABASES = {
         'PASSWORD': '147258',
         'HOST': '',
         'PORT': '',
-    },
+        'OPTIONS': {
+            "init_command": "SET foreign_key_checks = 0;",
+        },
+    }
 }
 
+MEDIA_URL = '/uploads/'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads')
 
 # Password validation
 # https://docs.djangoproject.com/en/1.9/ref/settings/#auth-password-validators
